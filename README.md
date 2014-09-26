@@ -1,5 +1,7 @@
 ## nerdobd2
 
+@k3xx: RaspberryPi portation
+
 Wanna hack your car?
 
 This tool reads out the data of your engine control unit (ECU) and writes them to a postgresql or sqlite3 database. Additionally it calculates the current consumption (using the engines RPM, the current speed and the injection time).
