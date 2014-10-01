@@ -1,13 +1,13 @@
 #define HTTPD_PORT	   8080
 #define DOCROOT		   "html"
 
-//#define DEBUG_SERIAL
+#define DEBUG_SERIAL
 //#define DEBUG_DB
 //#define DEBUG_AJAX
 //#define TEST
 
-//#define DB_SQLITE      "database.sqlite3"
-#define DB_POSTGRES    "user=nerdobd2 dbname=nerdobd2"
+#define DB_SQLITE      "database.sqlite3"
+//#define DB_POSTGRES    "user=nerdobd2 dbname=nerdobd2"
 
 /* if the system suspends and then resumes, the kernel tries to newly
  * assign /dev/ttyUSB0 to the USB to serial adapter. this fails, because
@@ -23,7 +23,7 @@
  */
 #define DEVICE          "/dev/obd2"
 
-#define BAUDRATE        10400   // for my seat arosa, vw polo needs 9600
+#define BAUDRATE        4800   // for my seat arosa, vw polo needs 9600
 #define INIT_DELAY      200000  // nanosec to wait to emulate 5baud
 
 /* constants for calculating consumption

@@ -2,8 +2,11 @@
  * thank you, gpsd team!
  */
 #include "gps.h"
+//#include "gpsd_config.h"
+//#include "gpsdclient.h"
 
 static struct gps_data_t gpsdata;
+//static struct fixsource_t source;
 char    gps_available = 0;
 
 
@@ -23,9 +26,14 @@ gps_stop(void) {
 int
 gps_start(void) {
 
+/* Grok the server, port, and device. */
+//gpsd_source_spec(NULL, &source);
+
     // open the stream to gpsd
-    if (gps_open(GPSD_SHARED_MEMORY, NULL, &gpsdata) != 0) {
-        printf("couldn't connect to gpsd: %s\n", gps_errstr(errno));
+//    if (gps_open(GPSD_SHARED_MEMORY, NULL, &gpsdata) != 0) {
+    if (gps_open(NULL, NULL, &gpsdata) != 0) {
+//    if (gps_open(source.server, source.port, &gpsdata) != 0) {
+	printf("couldn't connect to gpsd: %s\n", gps_errstr(errno));
         return -1;
     }
 
